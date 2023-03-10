@@ -1,1 +1,10 @@
-<p>login works!</p>
+<div class="field">
+    <label for="username1" class="block">Username</label>
+    <input id="username1" type="username" aria-describedby="username1-help" pInputText [(ngModel)]="userName" />
+</div>
+<div *ngFor="let category of categories" class="field-checkbox">
+    <p-radioButton [inputId]="category.key" name="category" [value]="category" [(ngModel)]="selectedCategory" [disabled]="category.key === 'R'"></p-radioButton>
+    <label [for]="category.key">{{category.name}}</label>
+</div>
+
+

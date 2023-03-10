@@ -11,5 +11,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  userName:String = "";
+  selectedCategory: any = null;
+
+  categories: any[] = [{name: 'Accounting', key: 'A'}, {name: 'Marketing', key: 'M'}, {name: 'Production', key: 'P'}, {name: 'Research', key: 'R'}];
+
 
 }
+
+
