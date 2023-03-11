@@ -5,6 +5,14 @@ import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 import { FormsModule } from '@angular/forms';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import {ButtonModule} from 'primeng/button';
+import { HttpClientModule } from '@angular/common/http';
+import {ToastModule} from 'primeng/toast';
+
+
+
+
+
 
 
 
@@ -16,7 +24,10 @@ import {RadioButtonModule} from 'primeng/radiobutton';
     CommonModule,
     LoginRoutingModule,
     FormsModule,
-    RadioButtonModule
+    RadioButtonModule,
+    ButtonModule,
+    HttpClientModule,
+    ToastModule
    
   ],
   bootstrap: [LoginComponent]

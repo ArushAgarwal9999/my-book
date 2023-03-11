@@ -1,10 +1,14 @@
-<div class="field">
+<p-toast></p-toast>
+<div>
+   
     <label for="username1" class="block">Username</label>
-    <input id="username1" type="username" aria-describedby="username1-help" pInputText [(ngModel)]="userName" />
+    <input class="ng-invalid ng-dirty" id="username1" type="username" aria-describedby="username1-help" pInputText [(ngModel)]="userName" />
 </div>
 <div *ngFor="let category of categories" class="field-checkbox">
-    <p-radioButton [inputId]="category.key" name="category" [value]="category" [(ngModel)]="selectedCategory" [disabled]="category.key === 'R'"></p-radioButton>
+    <p-radioButton [inputId]="category.key" name="category" [value]="category" [(ngModel)]="selectedCategory"></p-radioButton>
     <label [for]="category.key">{{category.name}}</label>
 </div>
-
+<div>
+    <p-button label="login" (onClick)="onLoginClick()" ></p-button>
+    </div>
 
