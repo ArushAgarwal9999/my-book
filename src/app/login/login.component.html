@@ -1,14 +1,22 @@
 <p-toast></p-toast>
-<div>
-   
-    <label for="username1" class="block">Username</label>
-    <input class="ng-invalid ng-dirty" id="username1" type="username" aria-describedby="username1-help" pInputText [(ngModel)]="userName" />
-</div>
-<div *ngFor="let category of categories" class="field-checkbox">
-    <p-radioButton [inputId]="category.key" name="category" [value]="category" [(ngModel)]="selectedCategory"></p-radioButton>
-    <label [for]="category.key">{{category.name}}</label>
-</div>
-<div>
-    <p-button label="login" (onClick)="onLoginClick()" ></p-button>
+<div class="container">
+    <div class="login-card">
+        <div class="heading">
+            <h2>LOGIN</h2>
+        </div>
+        <br>
+        <div>
+            <label for="username1" class="label-username">User ID</label>
+            <br>
+            <input class="ng-invalid ng-dirty" id="username1" type="username" aria-describedby="username1-help" pInputText [(ngModel)]="userName" />
+        </div>
+        <label for="category" class="label-category">Select your category</label>
+        <div *ngFor="let category of categories" class="field-checkbox">
+            <p-radioButton [inputId]="category.key" name="category" [value]="category" [(ngModel)]="selectedCategory"></p-radioButton>
+            <label [for]="category.key">{{category.name}}</label>
+        </div>
+        <div class="submit">
+            <p-button label="Log In" class="login" (onClick)="onLoginClick()" ></p-button>
+        </div>
     </div>
-
+</div>

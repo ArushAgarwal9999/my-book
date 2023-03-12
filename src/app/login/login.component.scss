@@ -1,0 +1,51 @@
+.conatiner {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.login-card {
+    margin-top: 20vh;
+    margin-left: 35vw;
+    width: 350px;
+    height: 400px;
+    padding: 1vw 2vw;
+    border: 1px solid black;
+}
+
+.heading {
+    color: black;
+    text-align: center;
+}
+
+.label-username {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#username1 {
+    border-radius: 2px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.label-category {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}.field-checkbox {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.submit {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login {
+    width: 70%;
+    height: 5vh;
+    border: 1px solid black;
+    border-radius: 35px;
+    font-size: 18px;
+    cursor: pointer;
+}
