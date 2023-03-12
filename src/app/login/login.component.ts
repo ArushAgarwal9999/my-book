@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import {MessageService} from 'primeng/api';
 import *  as Const from "../app-constant";
 import { Router } from '@angular/router';
+import { MyBookService } from '../my-book.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http: HttpClient,private messageService: MessageService,private router: Router ) { }
+  constructor(private http: HttpClient,private messageService: MessageService,private router: Router, private MyBookService:MyBookService ) { }
 
   ngOnInit(): void {
   }
@@ -58,7 +59,8 @@ export class LoginComponent implements OnInit {
         this.showError(res["msg"]);
       }
       else{
-        this.router.navigate(['/customer']);
+        this.MyBookService.currentLoginId = this.userName;
+        this.router.navigate(['/customer/'+this.userName]);
       }
     }
     );
