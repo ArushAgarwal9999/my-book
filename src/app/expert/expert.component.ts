@@ -83,5 +83,77 @@ export class ExpertComponent implements OnInit {
     }
    
   }
+  taskDone(rowData:any)
+  {
+    try {
+      console.log("rowData",rowData);
+      let body={
+          "taskId":rowData["taskId"],
+          "subTaskId":rowData["subTaskId"],
+          "expId":rowData["expId"]
+      }
+      this.http.post(Const.MARK_TASK,body).subscribe((res:any)=>{
+        if(res["status"] == "Successfully")
+        {
+          this.showSuccess(res["msg"]);
+          this.getAllTask();
+          this.getAllQueueTask();
+          this.getAllRunningTask();
+        }
+        else{
+          this.showError(res["msg"]);
+        }
+  
+      });
+    } catch (error) {
+      console.error(error);
+    }
+   
+  }
+  takeTask(rowData:any)
+  {
+    try {
+      console.log("rowData",rowData);
+      let body={
+          "taskId":rowData["taskId"],
+          "subTaskId":rowData["subTaskId"],
+          "expId":this.userId
+      }
+      this.http.post(Const.TAKE_TASK,body).subscribe((res:any)=>{
+        if(res["status"] == "Successfully")
+        {
+          this.showSuccess(res["msg"]);
+          this.getAllTask();
+          this.getAllQueueTask();
+          this.getAllRunningTask();
+        }
+        else{
+          this.showError(res["msg"]);
+        }
+  
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  showSuccess(meassage:string) {
+    this.messageService.clear();
+    this.messageService.add({severity:'success', summary: 'Success', detail: meassage});
+}
+
+showInfo(meassage:string) {
+  this.messageService.clear();
+    this.messageService.add({severity:'info', summary: 'Info', detail: meassage});
+}
+
+showWarn(meassage:string) {
+  this.messageService.clear();
+    this.messageService.add({severity:'warn', summary: 'Warn', detail: meassage});
+}
+
+showError(meassage:string) {
+  this.messageService.clear();
+    this.messageService.add({severity:'error', summary: 'Error', detail: meassage});
+}
 
 }
