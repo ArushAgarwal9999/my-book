@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
-import { map } from 'rxjs';
 import *  as Const from "../app-constant";
 import { MyBookService } from '../my-book.service';
 @Component({
@@ -18,6 +17,7 @@ export class CutomerComponent implements OnInit {
     { field: 'expId', header: 'Expert Id' },
     { field: 'cusId', header: 'Customer ID' },
     { field: 'taskId', header: 'Task ID' },
+    { field: 'subTaskId', header: 'Sub-Task ID' },
     { field: 'taskName', header: 'Task Name' },
     { field: 'status', header: 'Status' },
     { field: 'taskStartTime', header: 'Task Start Time' },

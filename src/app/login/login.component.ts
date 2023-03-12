@@ -59,9 +59,17 @@ export class LoginComponent implements OnInit {
         this.showError(res["msg"]);
       }
       else{
-        this.MyBookService.currentLoginId = this.userName;
-        this.router.navigate(['/customer/'+this.userName]);
+        if(this.selectedCategory.key == "customer")
+        {
+          this.MyBookService.currentLoginId = this.userName;
+          this.router.navigate(['/customer/'+this.userName]);
+        }
+        else{
+          this.router.navigate(['/expert/'+this.userName]);
+        }
+       
       }
+
     }
     );
     
